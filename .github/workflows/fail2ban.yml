@@ -1,6 +1,7 @@
 name: Docker Image Fail2ban
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'release-versions/fail2ban-latest.txt'
