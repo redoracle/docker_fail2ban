@@ -1,5 +1,6 @@
-name: Get latest Fail2https://github.com/redoracle/docker_fail2ban/blob/main/release-versions/fail2ban-latest.txtban release version
+name: Get latest Fail2ban release version
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 0 */12 * *'
 jobs:
