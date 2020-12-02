@@ -32,9 +32,8 @@ RUN apt update \
     tzdata \
     wget \
     unzip \
-    whois 
-
-RUN apt update; apt -y install bash python3 build-essential \
+    whois \
+    bash python3 build-essential \
     python3-pip \
     python3-dev \
   && pip3 install --upgrade pip \
@@ -43,7 +42,7 @@ RUN apt update; apt -y install bash python3 build-essential \
   && bash ./build.sh \
   && apt remove -y build-essential \
   && apt -y purge && apt -y clean && apt -y autoremove \
-  && rm -rf /etc/fail2ban/jail.d /tmp/* /var/lib/apt/lists/* 
+  && rm -rf /etc/fail2ban/jail.d /tmp/* rm /var/cache/* /var/lib/apt/lists/* 
 
 ADD https://raw.githubusercontent.com/redoracle/docker_fail2ban/main/entrypoint.sh /
 
